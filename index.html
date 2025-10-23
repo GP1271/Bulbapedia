@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mini Pokédex</title>
+  <style>
+    body { font-family: Arial; text-align: center; background-color: #f0f8ff; }
+    .pokedex { max-width: 600px; margin: auto; padding: 20px; }
+    input { padding: 8px; width: 80%; margin-top: 10px; }
+    .pokemon { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="pokedex">
+    <h1>Mini Pokédex</h1>
+    <input type="text" id="search" placeholder="Search Pokémon...">
+    <div id="pokemon" class="pokemon"></div>
+  </div>
+
+  <script>
+    const pokemon = {
+      pikachu: { type: 'Electric', number: 25, description: 'A mouse Pokémon that stores electricity.' },
+      bulbasaur: { type: 'Grass/Poison', number: 1, description: 'A seed Pokémon that loves sunlight.' },
+      charmander: { type: 'Fire', number: 4, description: 'A lizard Pokémon with a burning tail.' }
+    };
+
+    const search = document.getElementById('search');
+    const display = document.getElementById('pokemon');
+
+    search.addEventListener('input', () => {
+      const name = search.value.toLowerCase();
+      const data = pokemon[name];
+      if (data) {
+        display.innerHTML = `<h2>${name}</h2>
+        <p><strong>Type:</strong> ${data.type}</p>
+        <p><strong>Number:</strong> ${data.number}</p>
+        <p>${data.description}</p>`;
+      } else {
+        display.innerHTML = '<p>No Pokémon found.</p>';
+      }
+    });
+  </script>
+</body>
+</html>
