@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "bulbasaur",
+    "types": ["grass","poison"],
+    "species": "Seed Pokémon",
+    "description": "A strange seed was planted on its back at birth. The seed grows with this Pokémon.",
+    "height": 0.7,
+    "weight": 6.9,
+    "abilities": ["overgrow","chlorophyll"]
+  },
+  {
+    "id": 4,
+    "name": "charmander",
+    "types": ["fire"],
+    "species": "Lizard Pokémon",
+    "description": "Obviously prefers hot places. When it rains, steam is said to spout from the tip of its tail.",
+    "height": 0.6,
+    "weight": 8.5,
+    "abilities": ["blaze","solar-power"]
+  },
+  {
+    "id": 7,
+    "name": "squirtle",
+    "types": ["water"],
+    "species": "Tiny Turtle Pokémon",
+    "description": "After birth, its back swells and hardens into a shell. Powerfully sprays foam from its mouth.",
+    "height": 0.5,
+    "weight": 9.0,
+    "abilities": ["torrent","rain-dish"]
+  },
+  {
+    "id": 25,
+    "name": "pikachu",
+    "types": ["electric"],
+    "species": "Mouse Pokémon",
+    "description": "When several of these Pokémon gather, their electricity could build and cause lightning storms.",
+    "height": 0.4,
+    "weight": 6.0,
+    "abilities": ["static","lightning-rod"]
+  },
+  {
+    "id": 150,
+    "name": "mewtwo",
+    "types": ["psychic"],
+    "species": "Genetic Pokémon",
+    "description": "It was created by a scientist after years of horrific gene splicing and DNA engineering experiments.",
+    "height": 2.0,
+    "weight": 122.0,
+    "abilities": ["pressure","unnerve"]
+  },
+  {
+    "id": 393,
+    "name": "piplup",
+    "types": ["water"],
+    "species": "Penguin Pokémon",
+    "description": "It is very proud and dislikes accepting food from people. It always stands firmly and looks ahead.",
+    "height": 0.4,
+    "weight": 5.2,
+    "abilities": ["torrent","defiant"]
+  }
+]
