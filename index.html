@@ -1,43 +1,63 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Mini Pokédex</title>
-  <style>
-    body { font-family: Arial; text-align: center; background-color: #f0f8ff; }
-    .pokedex { max-width: 600px; margin: auto; padding: 20px; }
-    input { padding: 8px; width: 80%; margin-top: 10px; }
-    .pokemon { margin-top: 20px; }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Budget Bulbapedia — Pokédex</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Budget Bulbagarden-style Pokédex — search Pokémon, filter by type, and view details." />
 </head>
 <body>
-  <div class="pokedex">
-    <h1>Mini Pokédex</h1>
-    <input type="text" id="search" placeholder="Search Pokémon...">
-    <div id="pokemon" class="pokemon"></div>
+  <header class="site-header">
+    <h1>Budget Bulbapedia</h1>
+    <p class="subtitle">A lightweight Pokédex — search, filter, and browse.</p>
+  </header>
+
+  <main class="container">
+    <section class="controls">
+      <div class="control-row">
+        <input id="search" type="search" placeholder="Search by name or id (e.g. 'pikachu' or '25')" />
+        <select id="typeFilter">
+          <option value="">All types</option>
+        </select>
+        <select id="sortSelect" title="Sort Pokémon">
+          <option value="id-asc">ID ↑</option>
+          <option value="id-desc">ID ↓</option>
+          <option value="name-asc">Name A→Z</option>
+          <option value="name-desc">Name Z→A</option>
+        </select>
+        <button id="resetBtn">Reset</button>
+      </div>
+      <div class="control-row">
+        <label>Items per page:
+          <select id="perPage">
+            <option>12</option>
+            <option>24</option>
+            <option>48</option>
+          </select>
+        </label>
+        <div class="spacer"></div>
+        <div id="count" class="count"></div>
+      </div>
+    </section>
+
+    <section id="cards" class="cards" aria-live="polite"></section>
+
+    <nav class="pagination" id="pagination"></nav>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <button class="close" id="modalClose" aria-label="Close">✕</button>
+      <div id="modalBody"></div>
+    </div>
   </div>
 
-  <script>
-    const pokemon = {
-      pikachu: { type: 'Electric', number: 25, description: 'A mouse Pokémon that stores electricity.' },
-      bulbasaur: { type: 'Grass/Poison', number: 1, description: 'A seed Pokémon that loves sunlight.' },
-      charmander: { type: 'Fire', number: 4, description: 'A lizard Pokémon with a burning tail.' }
-    };
+  <footer class="site-footer">
+    <small>Sprites from PokeAPI sprites repository. This is unofficial fan content.</small>
+  </footer>
 
-    const search = document.getElementById('search');
-    const display = document.getElementById('pokemon');
-
-    search.addEventListener('input', () => {
-      const name = search.value.toLowerCase();
-      const data = pokemon[name];
-      if (data) {
-        display.innerHTML = `<h2>${name}</h2>
-        <p><strong>Type:</strong> ${data.type}</p>
-        <p><strong>Number:</strong> ${data.number}</p>
-        <p>${data.description}</p>`;
-      } else {
-        display.innerHTML = '<p>No Pokémon found.</p>';
-      }
-    });
-  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>
